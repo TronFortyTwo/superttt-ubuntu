@@ -62,6 +62,7 @@ Rectangle{
     width: parent.height/3-3                //get a third of the space and leave a bit --- need to fix the issue this causes
     radius: 10                              //rounding a bit
     border.color: "black"                   //border makes it pop
+    border.width: 1
     gradient: Gradient {                    //gradients, because why not
         GradientStop {
             position: 0.00;
@@ -91,7 +92,7 @@ Rectangle{
                 target: cell
                 gradcolor:"grey"
                 gradstop: "#ffffff"
-                border.color: "black"
+                //border.color: "black"
             }
         },
         State{
@@ -118,7 +119,8 @@ Rectangle{
                 gradcolor: game.playerOneColor
                 gradstop: game.playerOneColor
                 radius: 0
-                border.color: game.playerOneColor
+                border.width:0
+                //border.color: game.playerOneColor
 
             }
         },
@@ -129,7 +131,8 @@ Rectangle{
                 gradstop: game.playerTwoColor
                 gradcolor:game.playerTwoColor
                 radius: 0
-                border.color:game.playerTwoColor
+                border.width: 0
+                //border.color:game.playerTwoColor
             }
         },
         State{
@@ -139,9 +142,24 @@ Rectangle{
                 gradstop: game.drawColor
                 gradcolor: game.drawColor
                 radius: 0
-                border.color: game.drawColor
+                //border.color: game.drawColor
 
             }
         }
     ]
+
+    transitions:
+        Transition {
+            id: winnerTransition
+
+            from: "*"
+            to: "WINNERTWO,WINNERONE"
+
+            ParallelAnimation {
+                    id: winnerAnimation
+
+                    ColorAnimation {target: cell; duration: 200}
+                    NumberAnimation {properties: "border.width,radius"; duration: 500}
+                }
+        }
 }
