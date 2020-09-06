@@ -1,2 +1,4 @@
 {
+	"builder": "pure",
+	"default": "clean build install launch logs"
 }

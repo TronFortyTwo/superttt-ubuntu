@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=SuperTTT
+Comment=Super Tic Tac Toe
+Exec=qmlscene -style suru main.qml
+Icon=icon.svg
+Terminal=false
+Type=Application
+X-Ubuntu-Touch=true

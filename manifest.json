@@ -1,15 +1,15 @@
 {
     "architecture": "all",
-    "description": "description of SuperTTT-ubuntu",
-    "framework": "ubuntu-sdk-13.10",
+    "description": "Super Tic Tac Toe",
+    "framework": "ubuntu-sdk-16.04",
     "hooks": {
         "SuperTTT-ubuntu": {
-            "apparmor": "SuperTTT-ubuntu.json",
-            "desktop": "SuperTTT-ubuntu.desktop"
+            "apparmor": "superttt.json",
+            "desktop": "superttt.desktop"
         }
     },
-    "maintainer": "",
-    "name": "com.ubuntu.developer.username.superttt-ubuntu",
-    "title": "SuperTTT-ubuntu",
-    "version": "0.1"
+    "maintainer": "Emanuele Sorce",
+    "name": "superttt.emanuelesorce",
+    "title": "SuperTTT",
+    "version": "1.0"
 }
